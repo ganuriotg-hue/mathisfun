@@ -1,67 +1,227 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Unblocked Games</title>
-  <style>
-    body { font-family: sans-serif; background: #1a1a2e; color: white; text-align: center; }
-    h1 { padding: 20px; color: #e94560; }
-    .games { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 20px; }
-    .game-card { background: #16213e; border-radius: 10px; padding: 20px; width: 200px; }
-    .game-card p { color: white; font-size: 18px; font-weight: bold; margin-bottom: 15px; }
-    .play-btn { background: #e94560; color: white; border: none; padding: 15px 30px; border-radius: 8px; font-size: 16px; cursor: pointer; display: block; width: 100%; margin-bottom: 8px; }
-    .play-btn:hover { background: #c73652; }
-    #game-container { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: black; z-index: 999; }
-    #game-container iframe { width: 100%; height: 100%; border: none; }
-    #btn-bar { position: fixed; top: 10px; right: 20px; z-index: 1000; display: flex; gap: 10px; }
-    #close-btn, #fs-btn { background: #e94560; color: white; border: none; padding: 10px 20px; border-radius: 8px; font-size: 16px; cursor: pointer; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unblocked Games</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background:#0f172a;
+    color:white;
+    text-align:center;
+}
+
+h1{
+    padding:25px;
+    color:#ff4d6d;
+    font-size:2.2rem;
+}
+
+.games{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    padding:20px;
+    max-width:1200px;
+    margin:auto;
+}
+
+.game-card{
+    background:#16213e;
+    border-radius:15px;
+    padding:20px;
+    transition:transform 0.2s ease;
+    box-shadow:0 4px 12px rgba(0,0,0,.3);
+}
+
+.game-card:hover{
+    transform:translateY(-5px);
+}
+
+.game-card p{
+    font-size:20px;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+.play-btn{
+    background:#ff4d6d;
+    color:white;
+    border:none;
+    padding:14px;
+    border-radius:10px;
+    width:100%;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.2s;
+}
+
+.play-btn:hover{
+    background:#d63a58;
+}
+
+#game-container{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:black;
+    z-index:999;
+}
+
+#game-frame{
+    width:100%;
+    height:100%;
+    border:none;
+}
+
+#btn-bar{
+    position:fixed;
+    top:15px;
+    right:20px;
+    z-index:1000;
+    display:flex;
+    gap:10px;
+}
+
+.control-btn{
+    background:#ff4d6d;
+    border:none;
+    color:white;
+    padding:12px 18px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:15px;
+}
+
+.control-btn:hover{
+    background:#d63a58;
+}
+</style>
 </head>
 <body>
-  <h1>🎮 Unblocked Games</h1>
-  <div class="games">
+
+<h1>🎮 Unblocked Games</h1>
+
+<div class="games">
 
     <div class="game-card">
-      <p>🎿 Slope</p>
-      <button class="play-btn" onclick="openGame('https://slope-game-io.github.io/')">▶ Play Now</button>
+        <p>🎿 Slope</p>
+        <button class="play-btn"
+        onclick="openGame('https://slope-game-io.github.io/')">
+        ▶ Play Now
+        </button>
     </div>
 
     <div class="game-card">
-      <p>🏀 Basketball Bros</p>
-      <button class="play-btn" onclick="openGame('https://basketbros-game.github.io/')">▶ Play Now</button>
+        <p>🏀 Basketball Bros</p>
+        <button class="play-btn"
+        onclick="openGame('https://basketbros-game.github.io/')">
+        ▶ Play Now
+        </button>
     </div>
 
     <div class="game-card">
-      <p>🟡 Geometry Dash</p>
-      <button class="play-btn" onclick="openGame('https://geometrydash-lite2.github.io/')">▶ Play Now</button>
+        <p>🟡 Geometry Dash</p>
+        <button class="play-btn"
+        onclick="openGame('https://geometrydash-lite2.github.io/')">
+        ▶ Play Now
+        </button>
     </div>
 
-  </div>
+    <div class="game-card">
+        <p>🔫 1v1.LOL</p>
+        <button class="play-btn"
+        onclick="openGame('https://games.crazygames.com/en_US/1v1-lol/index.html')">
+        ▶ Play Now
+        </button>
+    </div>
 
-  <div id="game-container">
+    <div class="game-card">
+        <p>🐻 FNAF 1</p>
+        <button class="play-btn"
+        onclick="openGame('https://scratch.mit.edu/projects/469071750/embed')">
+        ▶ Play Now
+        </button>
+    </div>
+
+    <div class="game-card">
+        <p>⛳ Golf Orbit</p>
+        <button class="play-btn"
+        onclick="openGame('https://games.crazygames.com/en_US/golf-orbit/index.html')">
+        ▶ Play Now
+        </button>
+    </div>
+
+    <div class="game-card">
+        <p>🚗 Escape Road</p>
+        <button class="play-btn"
+        onclick="openGame('https://games.crazygames.com/en_US/escape-road/index.html')">
+        ▶ Play Now
+        </button>
+    </div>
+
+    <div class="game-card">
+        <p>👵 Granny</p>
+        <button class="play-btn"
+        onclick="openGame('https://scratch.mit.edu/projects/536380775/embed')">
+        ▶ Play Now
+        </button>
+    </div>
+
+</div>
+
+<div id="game-container">
+
     <div id="btn-bar">
-      <button id="fs-btn" onclick="goFullscreen()">⛶ Fullscreen</button>
-      <button id="close-btn" onclick="closeGame()">✖ Close</button>
-    </div>
-    <iframe id="game-frame" src="" allowfullscreen></iframe>
-  </div>
+        <button class="control-btn" onclick="goFullscreen()">
+            ⛶ Fullscreen
+        </button>
 
-  <script>
-    function openGame(url) {
-      document.getElementById('game-frame').src = url;
-      document.getElementById('game-container').style.display = 'block';
+        <button class="control-btn" onclick="closeGame()">
+            ✖ Close
+        </button>
+    </div>
+
+    <iframe id="game-frame" allowfullscreen></iframe>
+</div>
+
+<script>
+function openGame(url){
+    document.getElementById("game-frame").src = url;
+    document.getElementById("game-container").style.display = "block";
+}
+
+function closeGame(){
+    document.getElementById("game-frame").src = "";
+    document.getElementById("game-container").style.display = "none";
+}
+
+function goFullscreen(){
+    const container =
+    document.getElementById("game-container");
+
+    if(container.requestFullscreen){
+        container.requestFullscreen();
     }
-    function closeGame() {
-      document.getElementById('game-frame').src = '';
-      document.getElementById('game-container').style.display = 'none';
+}
+
+// ESC key closes game
+document.addEventListener("keydown", function(e){
+    if(e.key === "Escape"){
+        closeGame();
     }
-    function goFullscreen() {
-      var iframe = document.getElementById('game-frame');
-      if (iframe.requestFullscreen) iframe.requestFullscreen();
-      else if (iframe.webkitRequestFullscreen) iframe.webkitRequestFullscreen();
-      else if (iframe.mozRequestFullScreen) iframe.mozRequestFullScreen();
-    }
-  </script>
+});
+</script>
 
 </body>
 </html>
+```
