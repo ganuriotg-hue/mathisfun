@@ -27,7 +27,7 @@
 
     <div class="game-card">
       <p>🏀 Basketball Bros</p>
-      <button class="play-btn" onclick="openGame('https://PurePro4561.github.io/Basket-Bros/')">▶ Play Now</button>
+      <button class="play-btn" onclick="openGame('https://basketbros-game.github.io/')">▶ Play Now</button>
     </div>
 
   </div>
@@ -39,4 +39,14 @@
 
   <script>
     function openGame(url) {
-      document.getElementById('game-frame'
+      document.getElementById('game-frame').src = url;
+      document.getElementById('game-container').style.display = 'block';
+    }
+    function closeGame() {
+      document.getElementById('game-frame').src = '';
+      document.getElementById('game-container').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>
